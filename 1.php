@@ -1,3 +1,6 @@
+<?php
+require('conn.php')
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -146,11 +149,26 @@ body {
   <div class="container text-center">
     <div class="row align-items-center">
       <div class="col">
-        <h1 class="text-light">ABOUT US</h1><br><br>
-<div class="container">
-  <img src="9.png" alt="Snow" style="width:100%;">
-    <div class="centered">LiveAs Technologies is an organization registered in 2019 that develops affordable utility software & web applications with the aim of creating self sustainable business models for economically weaker regions for its holistic development. We aim to help aspiring bootstrap entrepreneurs to set up their business easily at a very reasonable cost or at free of cost.Our parent organization LiveAs, started operation in 2016 to take care of the cultural needs of society. We have a good online presence in India and America.</div>
-</div>
+        <h1 class="text-light">OUR PRODUCTS</h1><br><br>
+        <?php
+$result=mysqli_query($con,"select * from tbl_product");
+$l=mysqli_num_rows($result);
+while($row=mysqli_fetch_array($result))
+{
+    $id=$row[0];
+$name=$row[1];
+$photo=$row[2];
+?>
+                
+                
+                  <?php echo $name;?>
+                  <br>
+                  <img src="myfolder/<?php echo $photo;?>" style='width:75px;height:75px;'>
+
+                  <br><br>
+                <?php
+     }
+                  ?>
 </div>
       </div>
     </div>
