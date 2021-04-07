@@ -32,6 +32,8 @@ $photo=$row[2];
                   <?php echo $name;?>
                   <img src="myfolder/<?php echo $photo;?>" style='width:75px;height:75px;'>
                   <?php echo "<a href='delete.php?id=$id' style='color:red'>Delete Product</a></td>"?>
+                  <?php echo "<a href='edit.php?id=$id' style='color:green'>Edit Product</a></td>"?>
+
                   <br><br>
                 <?php
      }
